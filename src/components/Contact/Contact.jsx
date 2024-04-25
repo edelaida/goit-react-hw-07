@@ -1,4 +1,11 @@
-const Contact = ({ user, handleDelete }) => {
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsOps";
+
+const Contact = ({ user }) => {
+  const dispatch = useDispatch();
+  const handleDelete = () => {
+    dispatch(deleteContact(user.id));
+  };
   return (
     <li>
       <p>
